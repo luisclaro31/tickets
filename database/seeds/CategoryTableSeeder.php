@@ -7,24 +7,45 @@ class CategoryTableSeeder extends Seeder {
     {
 
         \DB::table('categories')->insert(array(
-            'description'   => 'Recibo De Credito',
-            'acronym'       => 'RC',
-        ));
-
-        \DB::table('categories')->insert(array(
-            'description'   => 'Credito Directo',
+            'description'   => 'Credito',
             'acronym'       => 'CR',
         ));
 
         \DB::table('categories')->insert(array(
-            'description'   => 'Inscripcion',
+            'description'   => 'Icetex',
             'acronym'       => 'IC',
         ));
 
         \DB::table('categories')->insert(array(
-            'description'   => 'Consulta Dir Admisiones',
+            'description'   => 'Volante De Matricula ',
+            'acronym'       => 'VM',
+        ));
+
+        \DB::table('categories')->insert(array(
+            'description'   => 'Recbo De Cuato',
+            'acronym'       => 'RC',
+        ));
+
+        \DB::table('categories')->insert(array(
+            'description'   => 'Otro Volante',
+            'acronym'       => 'OV',
+        ));
+
+        \DB::table('categories')->insert(array(
+            'description'   => 'Inscripcion, Reintegro O Tranferencia',
+            'acronym'       => 'IRT',
+        ));
+
+        \DB::table('categories')->insert(array(
+            'description'   => 'Entrega De Documentos',
+            'acronym'       => 'ED',
+        ));
+
+        \DB::table('categories')->insert(array(
+            'description'   => 'Dir Admisiones',
             'acronym'       => 'DR',
         ));
+
 
     }
 

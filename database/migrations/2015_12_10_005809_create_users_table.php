@@ -18,7 +18,7 @@ class CreateUsersTable extends Migration {
 			$table->string('full_name');
 			$table->string('email')->unique();
 			$table->string('password', 60);
-			$table->enum('module',[1,2,3,4,5,6,7,8,8,9,10]);
+			$table->enum('module',[1,2,3,4,5,6,7,8,8,9,10,11,12,13,14,15]);
 			$table->integer('type_id')->unsigned();
 			$table->rememberToken();
 			$table->timestamps();
