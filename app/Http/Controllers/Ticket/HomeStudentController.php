@@ -17,7 +17,7 @@ class HomeStudentController extends Controller {
 	{
 		$results = Call::with('User','Student', 'Student.Category')
 				->orderBy('id', 'DECS')
-				->paginate(8);
+				->paginate(6);
 		return view('home.home', compact('results'));
 	}
 
