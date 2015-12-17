@@ -4,7 +4,7 @@
 @foreach($results as $result)
     @if($result->student->category_id == 1)
         <div class="col-lg-6">
-            <div id="1" class="panel panel-danger">
+            <div id="1" class="panel panel-primary">
                 <div class="panel-heading">
                     <div class="row">
                         <div class="col-xs-6 col-sm-6"><h4 align="left">Turno <strong>{{ $result->Student->category->acronym.''.$result->student->id }}</strong></h4></div>
@@ -19,7 +19,7 @@
     @endif
     @if($result->student->category_id == 2)
         <div class="col-lg-6">
-            <div id="1" class="panel panel-danger">
+            <div id="1" class="panel panel-success">
                 <div class="panel-heading">
                     <div class="row">
                         <div class="col-xs-6 col-sm-6"><h4 align="left">Turno <strong>{{ $result->Student->category->acronym.''.$result->student->id }}</strong></h4></div>
@@ -34,7 +34,7 @@
     @endif
     @if($result->student->category_id == 3)
         <div class="col-lg-6">
-            <div id="1" class="panel panel-danger">
+            <div id="1" class="panel panel-info">
                 <div class="panel-heading">
                     <div class="row">
                         <div class="col-xs-6 col-sm-6"><h4 align="left">Turno <strong>{{ $result->Student->category->acronym.''.$result->student->id }}</strong></h4></div>
@@ -49,7 +49,7 @@
     @endif
     @if($result->student->category_id == 4)
         <div class="col-lg-6">
-            <div id="1" class="panel panel-danger">
+            <div id="1" class="panel panel-warning">
                 <div class="panel-heading">
                     <div class="row">
                         <div class="col-xs-6 col-sm-6"><h4 align="left">Turno <strong>{{ $result->Student->category->acronym.''.$result->student->id }}</strong></h4></div>
@@ -79,7 +79,7 @@
     @endif
     @if($result->student->category_id == 6)
         <div class="col-lg-6">
-            <div id="1" class="panel panel-danger">
+            <div id="1" class="panel panel-primary">
                 <div class="panel-heading">
                     <div class="row">
                         <div class="col-xs-6 col-sm-6"><h4 align="left">Turno <strong>{{ $result->Student->category->acronym.''.$result->student->id }}</strong></h4></div>
@@ -94,7 +94,7 @@
     @endif
     @if($result->student->category_id == 7)
         <div class="col-lg-6">
-            <div id="1" class="panel panel-danger">
+            <div id="1" class="panel panel-success">
                 <div class="panel-heading">
                     <div class="row">
                         <div class="col-xs-6 col-sm-6"><h4 align="left">Turno <strong>{{ $result->Student->category->acronym.''.$result->student->id }}</strong></h4></div>
@@ -109,7 +109,7 @@
     @endif
     @if($result->student->category_id == 8)
         <div class="col-lg-6">
-            <div id="1" class="panel panel-danger">
+            <div id="1" class="panel panel-info">
                 <div class="panel-heading">
                     <div class="row">
                         <div class="col-xs-6 col-sm-6"><h4 align="left">Turno <strong>{{ $result->Student->category->acronym.''.$result->student->id }}</strong></h4></div>
