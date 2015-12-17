@@ -7,72 +7,72 @@
             <div id="1" class="panel panel-danger">
                 <div class="panel-heading">
                     <div class="row">
-                        <div class="col-xs-6 col-sm-6"><h4 align="left">Turno <strong>{{ $result->Student->category->acronym.''.$result->student->id }}</strong></h4></div>
-                        <div class="col-xs-6 col-sm-6"><h4 align="right">Modulo # <strong>{{ $result->User->module}}</strong></h4></div>
+                        <div class="col-xs-6 col-sm-6"><h3 align="left">Turno <strong>{{ $result->Student->category->acronym.''.$result->student->id }}</strong></h3></div>
+                        <div class="col-xs-6 col-sm-6"><h3 align="right">Modulo # <strong>{{ $result->User->module}}</strong></h3></div>
                     </div>
                 </div>
                 <div class="panel-body">
-                    <h3 align="center">{{$result->student->full_name}}</h3>
+                    <h2 align="center"><strong>{{$result->student->full_name}}</strong></h2>
                 </div>
             </div>
         </div>
     @endif
     @if($result->student->category_id == 2)
         <div class="col-lg-6">
-            <div id="1" class="panel panel-warning">
+            <div id="1" class="panel panel-danger">
                 <div class="panel-heading">
                     <div class="row">
-                        <div class="col-xs-6 col-sm-6"><h4 align="left">Turno <strong>{{ $result->Student->category->acronym.''.$result->student->id }}</strong></h4></div>
-                        <div class="col-xs-6 col-sm-6"><h4 align="right">Modulo # <strong>{{ $result->User->module}}</strong></h4></div>
+                        <div class="col-xs-6 col-sm-6"><h3 align="left">Turno <strong>{{ $result->Student->category->acronym.''.$result->student->id }}</strong></h3></div>
+                        <div class="col-xs-6 col-sm-6"><h3 align="right">Modulo # <strong>{{ $result->User->module}}</strong></h3></div>
                     </div>
                 </div>
                 <div class="panel-body">
-                    <h3 align="center">{{$result->student->full_name}}</h3>
+                    <h2 align="center"><strong>{{$result->student->full_name}}</strong></h2>
                 </div>
             </div>
         </div>
     @endif
     @if($result->student->category_id == 3)
         <div class="col-lg-6">
-            <div id="1" class="panel panel-info">
+            <div id="1" class="panel panel-danger">
                 <div class="panel-heading">
                     <div class="row">
-                        <div class="col-xs-6 col-sm-6"><h4 align="left">Turno <strong>{{ $result->Student->category->acronym.''.$result->student->id }}</strong></h4></div>
-                        <div class="col-xs-6 col-sm-6"><h4 align="right">Modulo # <strong>{{ $result->User->module}}</strong></h4></div>
+                        <div class="col-xs-6 col-sm-6"><h3 align="left">Turno <strong>{{ $result->Student->category->acronym.''.$result->student->id }}</strong></h3></div>
+                        <div class="col-xs-6 col-sm-6"><h3 align="right">Modulo # <strong>{{ $result->User->module}}</strong></h3></div>
                     </div>
                 </div>
                 <div class="panel-body">
-                    <h3 align="center">{{$result->student->full_name}}</h3>
+                    <h2 align="center"><strong>{{$result->student->full_name}}</strong></h2>
                 </div>
             </div>
         </div>
     @endif
     @if($result->student->category_id == 4)
         <div class="col-lg-6">
-            <div id="1" class="panel panel-success">
+            <div id="1" class="panel panel-danger">
                 <div class="panel-heading">
                     <div class="row">
-                        <div class="col-xs-6 col-sm-6"><h4 align="left">Turno <strong>{{ $result->Student->category->acronym.''.$result->student->id }}</strong></h4></div>
-                        <div class="col-xs-6 col-sm-6"><h4 align="right">Modulo # <strong>{{ $result->User->module}}</strong></h4></div>
+                        <div class="col-xs-6 col-sm-6"><h3 align="left">Turno <strong>{{ $result->Student->category->acronym.''.$result->student->id }}</strong></h3></div>
+                        <div class="col-xs-6 col-sm-6"><h3 align="right">Modulo # <strong>{{ $result->User->module}}</strong></h3></div>
                     </div>
                 </div>
                 <div class="panel-body">
-                    <h3 align="center">{{$result->student->full_name}}</h3>
+                    <h2 align="center"><strong>{{$result->student->full_name}}</strong></h2>
                 </div>
             </div>
         </div>
     @endif
     @if($result->student->category_id == 5)
         <div class="col-lg-6">
-            <div id="1" class="panel panel-primary">
+            <div id="1" class="panel panel-danger">
                 <div class="panel-heading">
                     <div class="row">
-                        <div class="col-xs-6 col-sm-6"><h4 align="left">Turno <strong>{{ $result->Student->category->acronym.''.$result->student->id }}</strong></h4></div>
-                        <div class="col-xs-6 col-sm-6"><h4 align="right">Modulo # <strong>{{ $result->User->module}}</strong></h4></div>
+                        <div class="col-xs-6 col-sm-6"><h3 align="left">Turno <strong>{{ $result->Student->category->acronym.''.$result->student->id }}</strong></h3></div>
+                        <div class="col-xs-6 col-sm-6"><h3 align="right">Modulo # <strong>{{ $result->User->module}}</strong></h3></div>
                     </div>
                 </div>
                 <div class="panel-body">
-                    <h3 align="center">{{$result->student->full_name}}</h3>
+                    <h2 align="center"><strong>{{$result->student->full_name}}</strong></h2>
                 </div>
             </div>
         </div>
@@ -82,42 +82,42 @@
             <div id="1" class="panel panel-danger">
                 <div class="panel-heading">
                     <div class="row">
-                        <div class="col-xs-6 col-sm-6"><h4 align="left">Turno <strong>{{ $result->Student->category->acronym.''.$result->student->id }}</strong></h4></div>
-                        <div class="col-xs-6 col-sm-6"><h4 align="right">Modulo # <strong>{{ $result->User->module}}</strong></h4></div>
+                        <div class="col-xs-6 col-sm-6"><h3 align="left">Turno <strong>{{ $result->Student->category->acronym.''.$result->student->id }}</strong></h3></div>
+                        <div class="col-xs-6 col-sm-6"><h3 align="right">Modulo # <strong>{{ $result->User->module}}</strong></h3></div>
                     </div>
                 </div>
                 <div class="panel-body">
-                    <h3 align="center">{{$result->student->full_name}}</h3>
+                    <h2 align="center"><strong>{{$result->student->full_name}}</strong></h2>
                 </div>
             </div>
         </div>
     @endif
     @if($result->student->category_id == 7)
         <div class="col-lg-6">
-            <div id="1" class="panel panel-warning">
+            <div id="1" class="panel panel-danger">
                 <div class="panel-heading">
                     <div class="row">
-                        <div class="col-xs-6 col-sm-6"><h4 align="left">Turno <strong>{{ $result->Student->category->acronym.''.$result->student->id }}</strong></h4></div>
-                        <div class="col-xs-6 col-sm-6"><h4 align="right">Modulo # <strong>{{ $result->User->module}}</strong></h4></div>
+                        <div class="col-xs-6 col-sm-6"><h3 align="left">Turno <strong>{{ $result->Student->category->acronym.''.$result->student->id }}</strong></h3></div>
+                        <div class="col-xs-6 col-sm-6"><h3 align="right">Modulo # <strong>{{ $result->User->module}}</strong></h3></div>
                     </div>
                 </div>
                 <div class="panel-body">
-                    <h3 align="center">{{$result->student->full_name}}</h3>
+                    <h2 align="center"><strong>{{$result->student->full_name}}</strong></h2>
                 </div>
             </div>
         </div>
     @endif
     @if($result->student->category_id == 8)
         <div class="col-lg-6">
-            <div id="1" class="panel panel-info">
+            <div id="1" class="panel panel-danger">
                 <div class="panel-heading">
                     <div class="row">
-                        <div class="col-xs-6 col-sm-6"><h4 align="left">Turno <strong>{{ $result->Student->category->acronym.''.$result->student->id }}</strong></h4></div>
-                        <div class="col-xs-6 col-sm-6"><h4 align="right">Modulo # <strong>{{ $result->User->module}}</strong></h4></div>
+                        <div class="col-xs-6 col-sm-6"><h3 align="left">Turno <strong>{{ $result->Student->category->acronym.''.$result->student->id }}</strong></h3></div>
+                        <div class="col-xs-6 col-sm-6"><h3 align="right">Modulo # <strong>{{ $result->User->module}}</strong></h3></div>
                     </div>
                 </div>
                 <div class="panel-body">
-                    <h3 align="center">{{$result->student->full_name}}</h3>
+                    <h2 align="center"><strong>{{$result->student->full_name}}</strong></h2>
                 </div>
             </div>
         </div>

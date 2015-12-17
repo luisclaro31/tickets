@@ -46,9 +46,6 @@
 							<img src="{{asset('img/8.png')}}" alt="Third slide">
 						</div>
 						<div class="item">
-							<img src="{{asset('img/9.png')}}" alt="Third slide">
-						</div>
-						<div class="item">
 							<img src="{{asset('img/10.png')}}" alt="Third slide">
 						</div>
 						<div class="item">
