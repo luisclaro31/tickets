@@ -1,5 +1,6 @@
 <?php namespace Tickets\Http\Controllers\Ticket;
 
+use Carbon\Carbon;
 use Tickets\Http\Requests;
 use Tickets\Http\Controllers\Controller;
 
@@ -15,10 +16,18 @@ class HomeStudentController extends Controller {
 	 */
 	public function home()
 	{
+		$now = Carbon::now();
+		$now = $now->format('l jS \\of F Y h:i:s A');
+
+		$result = Call::orderBy('id', 'DECS')->first();
+		$created_at = Carbon::parse($result->created_at);
+		$endDate = $created_at->addSeconds(3);
+		$created_atf = $endDate->format('l jS \\of F Y h:i:s A');
+
 		$results = Call::with('User','Student', 'Student.Category')
 				->orderBy('id', 'DECS')
 				->paginate(6);
-		return view('home.home', compact('results'));
+		return view('home.home', compact('results','created_atf','now'));
 	}
 
 	public function index()

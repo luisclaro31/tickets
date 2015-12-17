@@ -36,5 +36,5 @@ Route::get('example', 'Ticket\HomeStudentController@home');
 
 Route::get('h', function() {
 
-	return view('ticket.home');
+	return view('welcome');
 });

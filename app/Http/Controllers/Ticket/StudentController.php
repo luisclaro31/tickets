@@ -97,8 +97,10 @@ class StudentController extends Controller {
 		$student = Student::findOrFail($id);
 		$student->fill($request->all());
 		$student->save();
-		return \Redirect::back();
+		Session::flash('message', $student->full_name . ' Modificado Con Exito');
+		return Redirect::route('ticket.student.create');
 
+		//return \Redirect::back();
 		//Actualizacion con ajax o funcinal a un
 		//$student = Student::findOrFail($id);
 		//$student->fill(Request::all());
