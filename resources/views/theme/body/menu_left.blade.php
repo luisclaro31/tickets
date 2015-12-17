@@ -19,7 +19,7 @@
             <a href="#">
                 <i class="fa fa-user-plus"></i> <span> Registrador</span> <i class="fa fa-angle-left pull-right"></i>
             </a>
-            <ul class="treeview-menu">
+            <ul class="treeview-menu" style="display: block;">
                 <li id="home"><a href="{{ url('/ticket/student') }}"><i class="fa fa-circle-o"></i> Inicio</a></li>
                 <li><a href="{{ url('/ticket/student/create') }}"><i class="fa fa-circle-o"></i> Crear Ticket</a></li>
             </ul>
@@ -28,7 +28,7 @@
             <a href="#">
                 <i class="fa fa-ticket"></i> <span> Ticket</span> <i class="fa fa-angle-left pull-right"></i>
             </a>
-            <ul class="treeview-menu">
+            <ul class="treeview-menu" style="display: block;">
                 <li><a href="{{ url('/ticket/call') }}"><i class="fa fa-circle-o"></i> Todo los Ticket</a></li>
             </ul>
             </li>

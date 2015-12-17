@@ -8,7 +8,7 @@
 </div>
 <div class="form-group">
     {!! Form::label('category_id', 'Categoria') !!}
-    {!! Form::select('category_id',['' => 'Seleccione Tipo',  '1'   => 'Credito', '2'   => 'Icetex',  '3'   => 'Volante De Matricula ', '4'   => 'Recbo De Cuato', '5'   => 'Otro Volante', '6'   => 'Inscripcion, Reintegro O Tranferencia', '7'   => 'Entrega De Documentos', '8'   => 'Dir Admisiones'],null, ['class' => 'form-control']) !!}
+    {!! Form::select('category_id',['' => 'Seleccione Tipo', '1'   => 'Credito', '2'   => 'Icetex',  '3'   => 'Volante De Matricula ', '4'   => 'Recibo De Cuato', '5'   => 'Otro Volante', '6'   => 'Inscripcion, Reintegro O Tranferencia', '7'   => 'Entrega De Documentos - Certificados - ', '8'   => 'Dir Admisiones'],null, ['class' => 'form-control']) !!}
 </div>
 <div class="form-group">
     {!! Form::label('user_id', 'Usuario Modificaor o Registrador = '. Auth::user()->full_name ) !!}

@@ -17,12 +17,12 @@ class HomeStudentController extends Controller {
 	public function home()
 	{
 		$now = Carbon::now();
-		$now = $now->format('l jS \\of F Y h:i:s A');
+		$now = $now->toDateTimeString();
 
 		$result = Call::orderBy('id', 'DECS')->first();
 		$created_at = Carbon::parse($result->created_at);
 		$endDate = $created_at->addSeconds(3);
-		$created_atf = $endDate->format('l jS \\of F Y h:i:s A');
+		$created_atf = $endDate->toDateTimeString();
 
 		$results = Call::with('User','Student', 'Student.Category')
 				->orderBy('id', 'DECS')

@@ -7,12 +7,12 @@
             <div id="1" class="panel panel-danger">
                 <div class="panel-heading">
                     <div class="row">
-                        <div class="col-xs-6 col-sm-6"><h3 align="left">Turno <strong>{{ $result->Student->category->acronym.''.$result->student->id }}</strong></h3></div>
-                        <div class="col-xs-6 col-sm-6"><h3 align="right">Modulo # <strong>{{ $result->User->module}}</strong></h3></div>
+                        <div class="col-xs-6 col-sm-6"><h4 align="left">Turno <strong>{{ $result->Student->category->acronym.''.$result->student->id }}</strong></h4></div>
+                        <div class="col-xs-6 col-sm-6"><h4 align="right">Modulo # <strong>{{ $result->User->module}}</strong></h4></div>
                     </div>
                 </div>
                 <div class="panel-body">
-                    <h2 align="center"><strong>{{$result->student->full_name}}</strong></h2>
+                    <h3 align="center"><strong>{{$result->student->full_name}}</strong></h3>
                 </div>
             </div>
         </div>
@@ -22,12 +22,12 @@
             <div id="1" class="panel panel-danger">
                 <div class="panel-heading">
                     <div class="row">
-                        <div class="col-xs-6 col-sm-6"><h3 align="left">Turno <strong>{{ $result->Student->category->acronym.''.$result->student->id }}</strong></h3></div>
-                        <div class="col-xs-6 col-sm-6"><h3 align="right">Modulo # <strong>{{ $result->User->module}}</strong></h3></div>
+                        <div class="col-xs-6 col-sm-6"><h4 align="left">Turno <strong>{{ $result->Student->category->acronym.''.$result->student->id }}</strong></h4></div>
+                        <div class="col-xs-6 col-sm-6"><h4 align="right">Modulo # <strong>{{ $result->User->module}}</strong></h4></div>
                     </div>
                 </div>
                 <div class="panel-body">
-                    <h2 align="center"><strong>{{$result->student->full_name}}</strong></h2>
+                    <h3 align="center"><strong>{{$result->student->full_name}}</strong></h3>
                 </div>
             </div>
         </div>
@@ -37,12 +37,12 @@
             <div id="1" class="panel panel-danger">
                 <div class="panel-heading">
                     <div class="row">
-                        <div class="col-xs-6 col-sm-6"><h3 align="left">Turno <strong>{{ $result->Student->category->acronym.''.$result->student->id }}</strong></h3></div>
-                        <div class="col-xs-6 col-sm-6"><h3 align="right">Modulo # <strong>{{ $result->User->module}}</strong></h3></div>
+                        <div class="col-xs-6 col-sm-6"><h4 align="left">Turno <strong>{{ $result->Student->category->acronym.''.$result->student->id }}</strong></h4></div>
+                        <div class="col-xs-6 col-sm-6"><h4 align="right">Modulo # <strong>{{ $result->User->module}}</strong></h4></div>
                     </div>
                 </div>
                 <div class="panel-body">
-                    <h2 align="center"><strong>{{$result->student->full_name}}</strong></h2>
+                    <h3 align="center"><strong>{{$result->student->full_name}}</strong></h3>
                 </div>
             </div>
         </div>
@@ -52,12 +52,12 @@
             <div id="1" class="panel panel-danger">
                 <div class="panel-heading">
                     <div class="row">
-                        <div class="col-xs-6 col-sm-6"><h3 align="left">Turno <strong>{{ $result->Student->category->acronym.''.$result->student->id }}</strong></h3></div>
-                        <div class="col-xs-6 col-sm-6"><h3 align="right">Modulo # <strong>{{ $result->User->module}}</strong></h3></div>
+                        <div class="col-xs-6 col-sm-6"><h4 align="left">Turno <strong>{{ $result->Student->category->acronym.''.$result->student->id }}</strong></h4></div>
+                        <div class="col-xs-6 col-sm-6"><h4 align="right">Modulo # <strong>{{ $result->User->module}}</strong></h4></div>
                     </div>
                 </div>
                 <div class="panel-body">
-                    <h2 align="center"><strong>{{$result->student->full_name}}</strong></h2>
+                    <h3 align="center"><strong>{{$result->student->full_name}}</strong></h3>
                 </div>
             </div>
         </div>
@@ -67,12 +67,12 @@
             <div id="1" class="panel panel-danger">
                 <div class="panel-heading">
                     <div class="row">
-                        <div class="col-xs-6 col-sm-6"><h3 align="left">Turno <strong>{{ $result->Student->category->acronym.''.$result->student->id }}</strong></h3></div>
-                        <div class="col-xs-6 col-sm-6"><h3 align="right">Modulo # <strong>{{ $result->User->module}}</strong></h3></div>
+                        <div class="col-xs-6 col-sm-6"><h4 align="left">Turno <strong>{{ $result->Student->category->acronym.''.$result->student->id }}</strong></h4></div>
+                        <div class="col-xs-6 col-sm-6"><h4 align="right">Modulo # <strong>{{ $result->User->module}}</strong></h4></div>
                     </div>
                 </div>
                 <div class="panel-body">
-                    <h2 align="center"><strong>{{$result->student->full_name}}</strong></h2>
+                    <h3 align="center"><strong>{{$result->student->full_name}}</strong></h3>
                 </div>
             </div>
         </div>
@@ -82,12 +82,12 @@
             <div id="1" class="panel panel-danger">
                 <div class="panel-heading">
                     <div class="row">
-                        <div class="col-xs-6 col-sm-6"><h3 align="left">Turno <strong>{{ $result->Student->category->acronym.''.$result->student->id }}</strong></h3></div>
-                        <div class="col-xs-6 col-sm-6"><h3 align="right">Modulo # <strong>{{ $result->User->module}}</strong></h3></div>
+                        <div class="col-xs-6 col-sm-6"><h4 align="left">Turno <strong>{{ $result->Student->category->acronym.''.$result->student->id }}</strong></h4></div>
+                        <div class="col-xs-6 col-sm-6"><h4 align="right">Modulo # <strong>{{ $result->User->module}}</strong></h4></div>
                     </div>
                 </div>
                 <div class="panel-body">
-                    <h2 align="center"><strong>{{$result->student->full_name}}</strong></h2>
+                    <h3 align="center"><strong>{{$result->student->full_name}}</strong></h3>
                 </div>
             </div>
         </div>
@@ -97,12 +97,12 @@
             <div id="1" class="panel panel-danger">
                 <div class="panel-heading">
                     <div class="row">
-                        <div class="col-xs-6 col-sm-6"><h3 align="left">Turno <strong>{{ $result->Student->category->acronym.''.$result->student->id }}</strong></h3></div>
-                        <div class="col-xs-6 col-sm-6"><h3 align="right">Modulo # <strong>{{ $result->User->module}}</strong></h3></div>
+                        <div class="col-xs-6 col-sm-6"><h4 align="left">Turno <strong>{{ $result->Student->category->acronym.''.$result->student->id }}</strong></h4></div>
+                        <div class="col-xs-6 col-sm-6"><h4 align="right">Modulo # <strong>{{ $result->User->module}}</strong></h4></div>
                     </div>
                 </div>
                 <div class="panel-body">
-                    <h2 align="center"><strong>{{$result->student->full_name}}</strong></h2>
+                    <h3 align="center"><strong>{{$result->student->full_name}}</strong></h3>
                 </div>
             </div>
         </div>
@@ -112,12 +112,12 @@
             <div id="1" class="panel panel-danger">
                 <div class="panel-heading">
                     <div class="row">
-                        <div class="col-xs-6 col-sm-6"><h3 align="left">Turno <strong>{{ $result->Student->category->acronym.''.$result->student->id }}</strong></h3></div>
-                        <div class="col-xs-6 col-sm-6"><h3 align="right">Modulo # <strong>{{ $result->User->module}}</strong></h3></div>
+                        <div class="col-xs-6 col-sm-6"><h4 align="left">Turno <strong>{{ $result->Student->category->acronym.''.$result->student->id }}</strong></h4></div>
+                        <div class="col-xs-6 col-sm-6"><h4 align="right">Modulo # <strong>{{ $result->User->module}}</strong></h4></div>
                     </div>
                 </div>
                 <div class="panel-body">
-                    <h2 align="center"><strong>{{$result->student->full_name}}</strong></h2>
+                    <h3 align="center"><strong>{{$result->student->full_name}}</strong></h3>
                 </div>
             </div>
         </div>
