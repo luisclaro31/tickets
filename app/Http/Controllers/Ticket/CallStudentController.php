@@ -22,8 +22,9 @@ class CallStudentController extends Controller {
 
 	public function index()
 	{
-		$results = Student::with('Category')
-				->where('state', '=', 0)
+		$results = Student::with('Category', 'Call','Call.User')
+				//->WhereIn('category_id', [ 2, 3])
+				->Where('state', '=', 0)
 				->orderBy('id', 'ASC')
 				->paginate(10);
 		return view('ticket.call.index', compact('results'));

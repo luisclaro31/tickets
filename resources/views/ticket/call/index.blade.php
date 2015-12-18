@@ -1,6 +1,7 @@
 @extends('theme.layout')
 
 @section('content')
+    <meta http-equiv="refresh" content="10">
     <section id="#home" class="content-header">
         <h1>
             Inicio

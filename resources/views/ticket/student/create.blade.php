@@ -29,7 +29,7 @@
 
                     {!! Form::open(['route' => 'ticket.student.store', 'method' => 'POST' ]) !!}
                         @include('ticket.student.design.fields.student_fields')
-                            <button type="submit" class="btn btn-default">Crear Ticket</button>
+                            <button type="submit" class="btn btn-success">Crear Ticket</button>
                     {!! Form::close() !!}
                 </div>
                 <div class="box-footer">

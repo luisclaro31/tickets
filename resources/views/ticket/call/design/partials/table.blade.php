@@ -4,6 +4,7 @@
     <th>Nombre de la Persona</th>
     <th>Identificacion</th>
     <th>Tramite</th>
+    <th>Atendienolo</th>
     <th>Botones</th>
 </tr>
 </thead>
@@ -15,7 +16,12 @@
         <td>{{ $result->identification }}</td>
         <td>{{ $result->category->description }}</td>
         <td>
-            <a href="{{ route('ticket.call.edit', $result)  }}"><button  type="button" class="btn btn-info btn-xs"> Atender </button></a>
+            @foreach($result->call as $call)
+                {{ $call->user->full_name}}
+            @endforeach
+        </td>
+        <td>
+            <a href="{{ route('ticket.call.edit', $result)  }}"><button  type="button" class="btn btn-info btn-sm"> <strong>Atender</strong> </button></a>
         </td>
     </tr>
 @endforeach
@@ -26,6 +32,7 @@
     <th>Nombre de la Persona</th>
     <th>Identificacion</th>
     <th>Tramite</th>
+    <th>Atendienolo</th>
     <th>Botones</th>
 </tr>
 </tfoot>
