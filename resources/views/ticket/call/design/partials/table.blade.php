@@ -4,7 +4,7 @@
     <th>Nombre de la Persona</th>
     <th>Identificacion</th>
     <th>Tramite</th>
-    <th>Atendienolo</th>
+    <th>Llamado Por</th>
     <th>Botones</th>
 </tr>
 </thead>
@@ -32,7 +32,7 @@
     <th>Nombre de la Persona</th>
     <th>Identificacion</th>
     <th>Tramite</th>
-    <th>Atendienolo</th>
+    <th>Llamado Por</th>
     <th>Botones</th>
 </tr>
 </tfoot>
