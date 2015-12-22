@@ -22,7 +22,7 @@ class CategoryTableSeeder extends Seeder {
         ));
 
         \DB::table('categories')->insert(array(
-            'description'   => 'Recibo De Cuato',
+            'description'   => 'Recibo De Cuota',
             'acronym'       => 'RC',
         ));
 

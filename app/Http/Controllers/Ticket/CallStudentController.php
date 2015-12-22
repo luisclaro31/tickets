@@ -14,6 +14,26 @@ use Tickets\Call;
 
 class CallStudentController extends Controller {
 
+	public function __construct()
+	{
+		$this->vola = Student::with('Category')
+							->WhereIn('category_id', [ 3, 4, 5])
+							->Where('state', '=', 0)
+							->paginate();
+		$this->cred = Student::with('Category')
+							->WhereIn('category_id', [ 1, 2])
+							->Where('state', '=', 0)
+							->paginate();
+		$this->insc = Student::with('Category')
+							->WhereIn('category_id', [ 6, 7])
+							->Where('state', '=', 0)
+							->paginate();
+		$this->dr = Student::with('Category')
+							->WhereIn('category_id', [ 8])
+							->Where('state', '=', 0)
+							->paginate();
+	}
+
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -22,14 +42,78 @@ class CallStudentController extends Controller {
 
 	public function index()
 	{
+		$vola = $this->vola;
+		$cred = $this->cred;
+		$insc = $this->insc;
+		$dr = $this->dr;
+
 		$results = Student::with('Category', 'Call','Call.User')
 				//->WhereIn('category_id', [ 2, 3])
 				->Where('state', '=', 0)
 				->orderBy('id', 'ASC')
 				->paginate(10);
-		return view('ticket.call.index', compact('results'));
+		return view('ticket.call.index', compact('results', 'vola','cred','insc','dr'));
 	}
 
+	public function frills()
+	{
+		$vola = $this->vola;
+		$cred = $this->cred;
+		$insc = $this->insc;
+		$dr = $this->dr;
+
+		$results = Student::with('Category', 'Call','Call.User')
+				->WhereIn('category_id', [ 3, 4, 5])
+				->Where('state', '=', 0)
+				->orderBy('id', 'ASC')
+				->paginate(10);
+		return view('ticket.call.index', compact('results', 'vola','cred','insc','dr'));
+	}
+
+	public function credit()
+	{
+		$vola = $this->vola;
+		$cred = $this->cred;
+		$insc = $this->insc;
+		$dr = $this->dr;
+
+		$results = Student::with('Category', 'Call','Call.User')
+				->WhereIn('category_id', [ 1, 2])
+				->Where('state', '=', 0)
+				->orderBy('id', 'ASC')
+				->paginate(10);
+		return view('ticket.call.index', compact('results', 'vola','cred','insc','dr'));
+	}
+
+	public function registrations()
+	{
+		$vola = $this->vola;
+		$cred = $this->cred;
+		$insc = $this->insc;
+		$dr = $this->dr;
+
+		$results = Student::with('Category', 'Call','Call.User')
+				->WhereIn('category_id', [ 6, 7])
+				->Where('state', '=', 0)
+				->orderBy('id', 'ASC')
+				->paginate(10);
+		return view('ticket.call.index', compact('results', 'vola','cred','insc','dr'));
+	}
+
+	public function dr()
+	{
+		$vola = $this->vola;
+		$cred = $this->cred;
+		$insc = $this->insc;
+		$dr = $this->dr;
+
+		$results = Student::with('Category', 'Call','Call.User')
+				->WhereIn('category_id', [ 8])
+				->Where('state', '=', 0)
+				->orderBy('id', 'ASC')
+				->paginate(10);
+		return view('ticket.call.index', compact('results', 'vola','cred','insc','dr'));
+	}
 	/**
 	 * Show the form for creating a new resource.
 	 *
@@ -52,7 +136,6 @@ class CallStudentController extends Controller {
 
 		Session::flash('message', 'El Ticket #' .$results_create_call->student_id . ' Fue Llamado Con Exito');
 		return \Redirect::back();
-
 	}
 
 	/**
@@ -74,8 +157,13 @@ class CallStudentController extends Controller {
 	 */
 	public function edit($id)
 	{
+		$vola = $this->vola;
+		$cred = $this->cred;
+		$insc = $this->insc;
+		$dr = $this->dr;
+
 		$results_student = Student::findOrFail($id);
-		return view('ticket.call.edit', compact('results_student'));
+		return view('ticket.call.edit', compact('results_student', 'vola','cred','insc','dr'));
 	}
 
 	/**

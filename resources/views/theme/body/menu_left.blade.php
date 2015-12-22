@@ -30,6 +30,10 @@
             </a>
             <ul class="treeview-menu" style="display: block;">
                 <li><a href="{{ url('/ticket/call') }}"><i class="fa fa-circle-o"></i> Todo los Ticket</a></li>
+                <li><a href="{{ url('/ticket/frills') }}"><i class="fa fa-circle-o"></i> Volantes<span class="label label-primary pull-right">{{ $vola->total() }}</span></a></li>
+                <li><a href="{{ url('/ticket/credit') }}"><i class="fa fa-circle-o"></i> Creditos<span class="label label-primary pull-right">{{ $cred->total() }}</span></a></li>
+                <li><a href="{{ url('/ticket/registrations') }}"><i class="fa fa-circle-o"></i> Ins. Ret. Tran. Doc.<span class="label label-primary pull-right">{{ $insc->total() }}</span></a></li>
+                <li><a href="{{ url('/ticket/dr') }}"><i class="fa fa-circle-o"></i> Dir. Admisiones<span class="label label-primary pull-right">{{ $dr->total() }}</span></a></li>
             </ul>
             </li>
             </li>

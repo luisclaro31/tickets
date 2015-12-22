@@ -30,6 +30,14 @@ Route::group(['prefix' => 'ticket', 'middleware' => ['auth'], 'namespace' => 'Ti
 			Route::resource('call','CallStudentController');
 		});
 
+Route::group(['prefix' => 'ticket', 'middleware' => ['auth']],
+		function() {
+			Route::get('frills', 'Ticket\CallStudentController@frills');
+			Route::get('credit', 'Ticket\CallStudentController@credit');
+			Route::get('registrations', 'Ticket\CallStudentController@registrations');
+			Route::get('dr', 'Ticket\CallStudentController@dr');
+		});
+
 Route::get('example1', 'Ticket\HomeStudentController@index');
 
 Route::get('example', 'Ticket\HomeStudentController@home');

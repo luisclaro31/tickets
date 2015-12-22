@@ -4,12 +4,12 @@
     <meta http-equiv="refresh" content="10">
     <section id="#home" class="content-header">
         <h1>
-            Inicio
+            Tickets
             <small>Listado de Estudiantes Registrados Sin atender</small>
         </h1>
         <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-user-plus"></i> Registrador</a></li>
-            <li class="active">Inicio</li>
+            <li><a href="#"><i class="fa fa-ticket"></i> Tickets</a></li>
+            <li class="active">Tickets list</li>
         </ol>
     </section>
     <section class="content">

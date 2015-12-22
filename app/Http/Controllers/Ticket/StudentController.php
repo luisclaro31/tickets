@@ -13,6 +13,26 @@ use Tickets\Student;
 
 class StudentController extends Controller {
 
+	public function __construct()
+	{
+		$this->vola = Student::with('Category')
+				->WhereIn('category_id', [ 3, 4, 5])
+				->Where('state', '=', 0)
+				->paginate();
+		$this->cred = Student::with('Category')
+				->WhereIn('category_id', [ 1, 2])
+				->Where('state', '=', 0)
+				->paginate();
+		$this->insc = Student::with('Category')
+				->WhereIn('category_id', [ 6, 7])
+				->Where('state', '=', 0)
+				->paginate();
+		$this->dr = Student::with('Category')
+				->WhereIn('category_id', [ 8])
+				->Where('state', '=', 0)
+				->paginate();
+	}
+
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -20,11 +40,16 @@ class StudentController extends Controller {
 	 */
 	public function index()
 	{
+		$vola = $this->vola;
+		$cred = $this->cred;
+		$insc = $this->insc;
+		$dr = $this->dr;
+
 		$results = Student::with('Category')
 				->where('state', '=', 0)
 				->orderBy('id', 'DECS')
 				->paginate(10);
-		return view('ticket.student.index', compact('results'));
+		return view('ticket.student.index', compact('results', 'vola','cred','insc','dr'));
 	}
 
 	/**
@@ -34,11 +59,16 @@ class StudentController extends Controller {
 	 */
 	public function create()
 	{
+		$vola = $this->vola;
+		$cred = $this->cred;
+		$insc = $this->insc;
+		$dr = $this->dr;
+
 		$results = Student::with('Category')
 				->where('state', '=', 0)
 				->orderBy('id', 'DECS')
 				->paginate(2);
-		return view('ticket.student.create', compact('results'));
+		return view('ticket.student.create', compact('results', 'vola','cred','insc','dr'));
 	}
 
 	/**
@@ -73,6 +103,11 @@ class StudentController extends Controller {
 	 */
 	public function edit($id)
 	{
+		$vola = $this->vola;
+		$cred = $this->cred;
+		$insc = $this->insc;
+		$dr = $this->dr;
+
 		$results_student = Student::findOrFail($id);
 
 		if (Request::ajax()){
@@ -83,7 +118,7 @@ class StudentController extends Controller {
 			]);
 		}
 
-		return view('ticket.student.edit', compact('results_student'));
+		return view('ticket.student.edit', compact('results_student', 'vola','cred','insc','dr'));
 	}
 
 	/**

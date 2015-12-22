@@ -4,6 +4,7 @@ use Tickets\Student;
 
 class HomeController extends Controller {
 
+
 	/*
 	|--------------------------------------------------------------------------
 	| Home Controller
@@ -23,6 +24,23 @@ class HomeController extends Controller {
 	public function __construct()
 	{
 		$this->middleware('auth');
+
+		$this->vola = Student::with('Category')
+				->WhereIn('category_id', [ 3, 4, 5])
+				->Where('state', '=', 0)
+				->paginate();
+		$this->cred = Student::with('Category')
+				->WhereIn('category_id', [ 1, 2])
+				->Where('state', '=', 0)
+				->paginate();
+		$this->insc = Student::with('Category')
+				->WhereIn('category_id', [ 6, 7])
+				->Where('state', '=', 0)
+				->paginate();
+		$this->dr = Student::with('Category')
+				->WhereIn('category_id', [ 8])
+				->Where('state', '=', 0)
+				->paginate();
 	}
 
 	/**
@@ -32,11 +50,16 @@ class HomeController extends Controller {
 	 */
 	public function index()
 	{
+		$vola = $this->vola;
+		$cred = $this->cred;
+		$insc = $this->insc;
+		$dr = $this->dr;
+
 		$results = Student::with('Category')
 				->where('state', '=', 0)
 				->orderBy('id', 'DECS')
 				->get();
-		return view('ticket.home', compact('results'));
+		return view('ticket.home', compact('results', 'vola','cred','insc','dr'));
 	}
 
 }
