@@ -53,10 +53,8 @@
                 <tr data-id="{{ $result->id }}">
                     <td>{{ $result->id }}</td>
                     <td>{{ $result->user->full_name }}</td>
-                    <td>{{ $result->student->full_name }}</td>
+                    <td>{{ $result->total_calls }}</td>
                     <td></td>
-                    <td></td>
-
                 </tr>
             @endforeach
         </table>

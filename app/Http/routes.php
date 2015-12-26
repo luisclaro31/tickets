@@ -13,6 +13,8 @@
 
 Route::get('/', 'WelcomeController@index');
 
+Route::get('example', 'Ticket\HomeStudentController@home');
+
 Route::get('home', 'HomeController@index');
 
 Route::controllers([
@@ -38,9 +40,14 @@ Route::group(['prefix' => 'ticket', 'middleware' => ['auth']],
 			Route::get('dr', 'Ticket\CallStudentController@dr');
 		});
 
-Route::get('example1', 'Ticket\HomeStudentController@index');
+Route::group(['prefix' => 'ticket', 'middleware' => ['auth'], 'namespace' => 'Ticket' ],
+		function() {
+			Route::resource('report','ReportCallsController');
+		});
 
-Route::get('example', 'Ticket\HomeStudentController@home');
+
+Route::get('report', 'Ticket\ReportCallsController@index');
+
 
 Route::get('h', function() {
 
