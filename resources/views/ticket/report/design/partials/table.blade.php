@@ -10,7 +10,7 @@
         @foreach($results as $result)
             @if($result->user->type_id == 2)
             <tr>
-                <td>{{ $result->id }}</td>
+                <td>{{ $result->user->id }}</td>
                 <td>{{ $result->user->full_name }}</td>
                 <td>{{ $result->user->module }}</td>
                 <td>{{ $result->total_calls }}</td>

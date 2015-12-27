@@ -15,4 +15,13 @@ class Call extends Model
     {
         return $this->belongsTo('Tickets\User');
     }
+
+    public function scopeName($query, $student_id)
+    {
+        if (trim($student_id) != "")
+        {
+            $query->where('student_id', $student_id);
+        }
+
+    }
 }

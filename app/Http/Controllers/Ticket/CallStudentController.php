@@ -10,7 +10,6 @@ use Tickets\Http\Requests\CreateCallRequest;
 use Tickets\Http\Requests;
 use Tickets\Student;
 use Tickets\Call;
-//use Illuminate\Http\Request;
 
 class CallStudentController extends Controller {
 
@@ -132,9 +131,28 @@ class CallStudentController extends Controller {
 	 */
 	public function store(CreateCallRequest $request)
 	{
-		$results_create_call = Call::create($request->all());
+		$query = Call::name($request->get('student_id'))->get();
+		$id = 0;
+		foreach($query as $querys)
+		{
+			$id = $querys->id;
+		}
+		if($id == 0)
+		{
+			$results = Call::create($request->all());
+			$message = 'El Ticket #' . $results->student_id . ' Fue Llamado Con Exito';
+		}
+		else
+		{
+			$results = Call::findOrFail($id);
+			$results->delete();
 
-		Session::flash('message', 'El Ticket #' .$results_create_call->student_id . ' Fue Llamado Con Exito');
+			$results = Call::create($request->all());
+
+			$message = 'El Ticket # '. $results->student_id . ' Fue Eliminado y Fue Llamado Con Exito';
+		}
+
+		Session::flash('message', $message);
 		return \Redirect::back();
 	}
 

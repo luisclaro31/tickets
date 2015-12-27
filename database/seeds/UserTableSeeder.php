@@ -76,6 +76,15 @@ class UserTableSeeder extends Seeder {
             'full_name'     => 'Tatiana Aguirre',
             'email'         => 'Aguirre@ticket.me',
             'password'      => \Hash::make('secret'),
+            'module'        => 9,
+            'type_id'       => 2,
+
+        ));
+
+        \DB::table('users')->insert(array(
+            'full_name'     => 'Daniel Ibarra',
+            'email'         => 'ibarra@ticket.me',
+            'password'      => \Hash::make('secret'),
             'module'        => 7,
             'type_id'       => 2,
 
