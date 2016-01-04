@@ -19,7 +19,7 @@
                 </div>
             </div>
             <div class="box-body">
-                <div><p>Total Estudiantes Con Turnos # {{ $results->total() }} </p></div>
+                <div><p>Total Trabajadores # {{ $results->total() }} </p></div>
                 @if (Session::has('message'))
                 <p class="alert alert-success">{{ Session::get('message') }}</p>
                 @endif
