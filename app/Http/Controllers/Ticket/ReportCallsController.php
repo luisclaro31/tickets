@@ -56,7 +56,7 @@ class ReportCallsController extends Controller {
 				->groupBy('calls.user_id')
 				->groupBy('students.category_id')
 				->join('users', 'users.id', '=','calls.user_id')
-				->join('students', 'students.id', '=','calls.student_id') //consultar dos tablas llave primaria y foranea
+				->join('students', 'students.id', '=','calls.student_id')
 				->join('categories', 'categories.id', '=', 'students.category_id')
 				->get();
 
