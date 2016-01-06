@@ -42,12 +42,33 @@ class ReportCallsController extends Controller {
 		$insc = $this->insc;
 		$dr = $this->dr;
 
-		$results = Call::select(['user_id','student_id', DB::raw('COUNT(student_id) as total_calls')])
-				->with('user')
+
+		$reports = \DB::table('calls')
+				->select(
+					'calls.user_id',
+					'users.full_name',
+					'users.type_id',
+					'students.category_id',
+					'categories.description',
+					DB::raw('COUNT(calls.user_id) as total_calls_category', 'COUNT(students.category_id) as total_category')
+				)
+				->where('users.type_id', 2)
+				->groupBy('calls.user_id')
+				->groupBy('students.category_id')
+				->join('users', 'users.id', '=','calls.user_id')
+				->join('students', 'students.id', '=','calls.student_id') //consultar dos tablas llave primaria y foranea
+				->join('categories', 'categories.id', '=', 'students.category_id')
+				->get();
+
+		//dd($reports);
+		$id = 0;
+
+		$results = Call::with('user')
+				->select(['user_id','student_id', DB::raw('COUNT(student_id) as total_calls')])
 				->groupBy('user_id')
 				->orderBy('total_calls', 'DECS')
 				->paginate(10);
-		return view('ticket.report.index', compact('results', 'vola','cred','insc','dr'));
+		return view('ticket.report.index', compact('results', 'reports', 'id', 'vola','cred','insc','dr'));
 	}
 
 	/**
