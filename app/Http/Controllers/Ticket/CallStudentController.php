@@ -131,7 +131,7 @@ class CallStudentController extends Controller {
 	 */
 	public function store(CreateCallRequest $request)
 	{
-		$query = Call::name($request->get('student_id'))->get();
+		$query = Call::studentid($request->get('student_id'))->get();
 		$id = 0;
 		foreach($query as $querys)
 		{

@@ -1,8 +1,9 @@
 <?php namespace Tickets\Http\Controllers\Ticket;
 
 use Carbon\Carbon;
-use Illuminate\Http\Request;
+use Illuminate\Http\Request as Requestt;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Request;
 use Tickets\Call;
 use Tickets\Http\Requests;
 use Tickets\Http\Controllers\Controller;
@@ -35,15 +36,18 @@ class ReportCallsController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function index(Request $request)
+	public function index(Requestt $request)
 	{
 		$vola = $this->vola;
 		$cred = $this->cred;
 		$insc = $this->insc;
 		$dr = $this->dr;
 
-		$now = Carbon::now();
-		$now = $now->toDateString();
+		//$now = Carbon::now();
+		//$now = $now->toDateString();
+		//$query = ['date' => $now];
+
+		$query = Request::all();
 
 		$reports = \DB::table('calls')
 				->select(
@@ -61,8 +65,6 @@ class ReportCallsController extends Controller {
 				->join('students', 'students.id', '=','calls.student_id')
 				->join('categories', 'categories.id', '=', 'students.category_id')
 				->get();
-
-		//dd($reports);
 		$id = 0;
 
 		$results = Call::with('user')
@@ -71,7 +73,7 @@ class ReportCallsController extends Controller {
 				->groupBy('user_id')
 				->orderBy('total_calls', 'DECS')
 				->paginate(10);
-		return view('ticket.report.index', compact('results', 'reports', 'id', 'now', 'vola','cred','insc','dr'));
+		return view('ticket.report.index', compact('results', 'reports', 'id', 'query', 'vola','cred','insc','dr'));
 	}
 
 	/**

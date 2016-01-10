@@ -40,8 +40,8 @@
                 </div>
             </div>
             <div class="box-body">
-                <table class="table table-striped">
-                    @include('ticket.report.design.partials.table2')
+                <table id="table" class="table table-bordered table-striped">
+                    @include('ticket.report.design.partials.table3')
                 </table>
             </div>
         </div>
@@ -54,8 +54,8 @@
                 </div>
             </div>
             <div class="box-body">
-                <table id="table" class="table table-bordered table-striped">
-                    @include('ticket.report.design.partials.table3')
+                <table class="table table-striped">
+                    @include('ticket.report.design.partials.table2')
                 </table>
             </div>
         </div>
