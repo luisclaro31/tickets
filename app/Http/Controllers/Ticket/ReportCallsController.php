@@ -1,11 +1,11 @@
 <?php namespace Tickets\Http\Controllers\Ticket;
 
+use Carbon\Carbon;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Tickets\Call;
 use Tickets\Http\Requests;
 use Tickets\Http\Controllers\Controller;
-
-use Illuminate\Http\Request;
 use Tickets\Student;
 
 class ReportCallsController extends Controller {
@@ -35,13 +35,15 @@ class ReportCallsController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function index()
+	public function index(Request $request)
 	{
 		$vola = $this->vola;
 		$cred = $this->cred;
 		$insc = $this->insc;
 		$dr = $this->dr;
 
+		$now = Carbon::now();
+		$now = $now->toDateString();
 
 		$reports = \DB::table('calls')
 				->select(
@@ -64,11 +66,12 @@ class ReportCallsController extends Controller {
 		$id = 0;
 
 		$results = Call::with('user')
+				->date($request->get('date'))
 				->select(['user_id','student_id', DB::raw('COUNT(student_id) as total_calls')])
 				->groupBy('user_id')
 				->orderBy('total_calls', 'DECS')
 				->paginate(10);
-		return view('ticket.report.index', compact('results', 'reports', 'id', 'vola','cred','insc','dr'));
+		return view('ticket.report.index', compact('results', 'reports', 'id', 'now', 'vola','cred','insc','dr'));
 	}
 
 	/**

@@ -24,4 +24,14 @@ class Call extends Model
         }
 
     }
+
+    public function scopeDate($query, $date)
+    {
+
+        if (trim($date) != "")
+        {
+            $query->where('calls.created_at', "LIKE", "%$date%");
+        }
+
+    }
 }
