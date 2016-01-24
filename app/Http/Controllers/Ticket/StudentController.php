@@ -24,7 +24,7 @@ class StudentController extends Controller {
 				->Where('state', '=', 0)
 				->paginate();
 		$this->insc = Student::with('Category')
-				->WhereIn('category_id', [ 6, 7])
+				->WhereIn('category_id', [ 6, 7,9,10,11])
 				->Where('state', '=', 0)
 				->paginate();
 		$this->dr = Student::with('Category')

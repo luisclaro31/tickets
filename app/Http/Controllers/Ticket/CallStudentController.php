@@ -24,7 +24,7 @@ class CallStudentController extends Controller {
 							->Where('state', '=', 0)
 							->paginate();
 		$this->insc = Student::with('Category')
-							->WhereIn('category_id', [ 6, 7])
+							->WhereIn('category_id', [ 6, 7,9,10,11])
 							->Where('state', '=', 0)
 							->paginate();
 		$this->dr = Student::with('Category')
@@ -92,7 +92,7 @@ class CallStudentController extends Controller {
 		$dr = $this->dr;
 
 		$results = Student::with('Category', 'Call','Call.User')
-				->WhereIn('category_id', [ 6, 7])
+				->WhereIn('category_id', [ 6, 7,9,10,11])
 				->Where('state', '=', 0)
 				->orderBy('id', 'ASC')
 				->paginate(10);

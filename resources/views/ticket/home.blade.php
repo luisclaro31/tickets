@@ -1,7 +1,7 @@
 @extends('theme.layout')
 
 @section('content')
-		<!-- Content Header (Page header) -->
+<meta http-equiv="refresh" content="10">
 <section class="content-header">
 	<h1>
 		Inicio
