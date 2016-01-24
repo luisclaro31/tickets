@@ -3,7 +3,7 @@
  */
 var seconds = 1; // el tiempo en que se refresca
 var divid = "contenido"; // el div que quieres actualizar!
-var url = "public/example"; // el archivo que ira en el div
+var url = "example"; // el archivo que ira en el div
 
 function refreshdiv(){
 
