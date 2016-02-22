@@ -11,7 +11,7 @@
                     </div>
                 </div>
                 <div class="panel-body">
-                    <h3 align="center"><strong>{{$result->student->full_name}}</strong></h3>
+                    <h3 align="center"><strong>{{ strtoupper(ucwords(substr($result->student->full_name,0,15))) }}</strong></h3>
                 </div>
             </div>
         </div>
