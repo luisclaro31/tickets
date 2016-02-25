@@ -1,6 +1,6 @@
 @extends('home.layout')
 @section('content')
-<meta http-equiv="refresh" content="70">
+<!-- <meta http-equiv="refresh" content="70"> -->
 
 <section class="content-header">
 	<!--<h1>
