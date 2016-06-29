@@ -8,7 +8,7 @@
 </div>
 <div class="form-group">
     {!! Form::label('category_id', 'Categoria') !!}
-    {!! Form::select('category_id', config('info.select.category_id') ,null, ['class' => 'form-control','readonly']) !!}
+    {!! Form::select('category_id', ['' => 'Seleccionar Tipo', 'Tipo de Servicio' => $category] ,null, ['class' => 'form-control','readonly']) !!}
 </div>
 <div class="form-group">
     <!--{!! Form::label('user_id', 'Usuario Modificaor o Registrador = '. Auth::user()->full_name ) !!}-->
