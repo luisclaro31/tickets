@@ -23,7 +23,7 @@ class EditStudentRequest extends Request {
 	{
 		return [
 				'full_name'			=>	'required',
-				'identification'	=>	'required',
+				'identification'	=>	'',
 				'category_id'		=>	'required',
 				'user_id'			=>	'required'
 		];

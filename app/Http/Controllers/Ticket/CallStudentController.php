@@ -15,22 +15,30 @@ class CallStudentController extends Controller {
 
 	public function __construct()
 	{
-		$this->vola = Student::with('Category')
-							->WhereIn('category_id', [ 3, 4, 5])
-							->Where('state', '=', 0)
-							->paginate();
-		$this->cred = Student::with('Category')
-							->WhereIn('category_id', [ 1, 2])
-							->Where('state', '=', 0)
-							->paginate();
-		$this->insc = Student::with('Category')
-							->WhereIn('category_id', [ 6, 7,9,10,11])
-							->Where('state', '=', 0)
-							->paginate();
-		$this->dr = Student::with('Category')
-							->WhereIn('category_id', [ 8])
-							->Where('state', '=', 0)
-							->paginate();
+		$this->vm = Student::with('Category', 'Call', 'Call.User')
+				->WhereIn('category_id', [3, 4])
+				->Where('state', '=', 0)
+				->paginate(10);
+		$this->ic_cr = Student::with('Category', 'Call', 'Call.User')
+				->WhereIn('category_id', [1, 2])
+				->Where('state', '=', 0)
+				->paginate(10);
+		$this->ec_cn = Student::with('Category', 'Call', 'Call.User')
+				->WhereIn('category_id', [5, 6])
+				->Where('state', '=', 0)
+				->paginate(10);
+		$this->in_aet_re_tr = Student::with('Category', 'Call', 'Call.User')
+				->WhereIn('category_id', [7, 8, 9, 10])
+				->Where('state', '=', 0)
+				->paginate(10);
+		$this->sd_dg = Student::with('Category', 'Call', 'Call.User')
+				->WhereIn('category_id', [11, 12])
+				->Where('state', '=', 0)
+				->paginate(10);
+		$this->dr = Student::with('Category', 'Call', 'Call.User')
+				->WhereIn('category_id', [13])
+				->Where('state', '=', 0)
+				->paginate(10);
 	}
 
 	/**
@@ -41,77 +49,103 @@ class CallStudentController extends Controller {
 
 	public function index()
 	{
-		$vola = $this->vola;
-		$cred = $this->cred;
-		$insc = $this->insc;
-		$dr = $this->dr;
+		$vm 			= $this->vm;
+		$ic_cr 			= $this->ic_cr;
+		$ec_cn			= $this->ec_cn;
+		$in_aet_re_tr	= $this->in_aet_re_tr;
+		$sd_dg			= $this->sd_dg;
+		$dr				= $this->dr;
 
 		$results = Student::with('Category', 'Call','Call.User')
-				//->WhereIn('category_id', [ 2, 3])
 				->Where('state', '=', 0)
 				->orderBy('id', 'ASC')
 				->paginate(10);
-		return view('ticket.call.index', compact('results', 'vola','cred','insc','dr'));
+
+		return view('ticket.call.index', compact('results', 'vm', 'ic_cr', 'ec_cn', 'in_aet_re_tr', 'sd_dg', 'dr'));
 	}
 
 	public function frills()
 	{
-		$vola = $this->vola;
-		$cred = $this->cred;
-		$insc = $this->insc;
-		$dr = $this->dr;
+		$vm 	= $this->vm;
+		$ic_cr 	= $this->ic_cr;
+		$ec_cn	= $this->ec_cn;
+		$in_aet_re_tr	= $this->in_aet_re_tr;
+		$sd_dg		= $this->sd_dg;
+		$dr		= $this->dr;
 
-		$results = Student::with('Category', 'Call','Call.User')
-				->WhereIn('category_id', [ 3, 4, 5])
-				->Where('state', '=', 0)
-				->orderBy('id', 'ASC')
-				->paginate(10);
-		return view('ticket.call.index', compact('results', 'vola','cred','insc','dr'));
+		$results = $this->vm;
+
+		return view('ticket.call.index', compact('results', 'vm', 'ic_cr', 'ec_cn', 'in_aet_re_tr', 'sd_dg', 'dr'));
 	}
 
 	public function credit()
 	{
-		$vola = $this->vola;
-		$cred = $this->cred;
-		$insc = $this->insc;
-		$dr = $this->dr;
+		$vm 	= $this->vm;
+		$ic_cr 	= $this->ic_cr;
+		$ec_cn	= $this->ec_cn;
+		$in_aet_re_tr	= $this->in_aet_re_tr;
+		$sd_dg		= $this->sd_dg;
+		$dr		= $this->dr;
 
-		$results = Student::with('Category', 'Call','Call.User')
-				->WhereIn('category_id', [ 1, 2])
-				->Where('state', '=', 0)
-				->orderBy('id', 'ASC')
-				->paginate(10);
-		return view('ticket.call.index', compact('results', 'vola','cred','insc','dr'));
+		$results = $this->ic_cr;
+
+		return view('ticket.call.index', compact('results', 'vm', 'ic_cr', 'ec_cn', 'in_aet_re_tr', 'sd_dg', 'dr'));
+	}
+
+	public function certified()
+	{
+		$vm 	= $this->vm;
+		$ic_cr 	= $this->ic_cr;
+		$ec_cn	= $this->ec_cn;
+		$in_aet_re_tr	= $this->in_aet_re_tr;
+		$sd_dg		= $this->sd_dg;
+		$dr		= $this->dr;
+
+		$results = $this->ec_cn;
+
+		return view('ticket.call.index', compact('results', 'vm', 'ic_cr', 'ec_cn', 'in_aet_re_tr', 'sd_dg', 'dr'));
 	}
 
 	public function registrations()
 	{
-		$vola = $this->vola;
-		$cred = $this->cred;
-		$insc = $this->insc;
-		$dr = $this->dr;
+		$vm 	= $this->vm;
+		$ic_cr 	= $this->ic_cr;
+		$ec_cn	= $this->ec_cn;
+		$in_aet_re_tr	= $this->in_aet_re_tr;
+		$sd_dg		= $this->sd_dg;
+		$dr		= $this->dr;
 
-		$results = Student::with('Category', 'Call','Call.User')
-				->WhereIn('category_id', [ 6, 7,9,10,11])
-				->Where('state', '=', 0)
-				->orderBy('id', 'ASC')
-				->paginate(10);
-		return view('ticket.call.index', compact('results', 'vola','cred','insc','dr'));
+		$results = $this->in_aet_re_tr;
+
+		return view('ticket.call.index', compact('results', 'vm', 'ic_cr', 'ec_cn', 'in_aet_re_tr', 'sd_dg', 'dr'));
+	}
+
+	public function others()
+	{
+		$vm 			= $this->vm;
+		$ic_cr 			= $this->ic_cr;
+		$ec_cn			= $this->ec_cn;
+		$in_aet_re_tr	= $this->in_aet_re_tr;
+		$sd_dg			= $this->sd_dg;
+		$dr				= $this->dr;
+
+		$results = $this->sd_dg;
+
+		return view('ticket.call.index', compact('results', 'vm', 'ic_cr', 'ec_cn', 'in_aet_re_tr', 'sd_dg', 'dr'));
 	}
 
 	public function dr()
 	{
-		$vola = $this->vola;
-		$cred = $this->cred;
-		$insc = $this->insc;
-		$dr = $this->dr;
+		$vm 			= $this->vm;
+		$ic_cr 			= $this->ic_cr;
+		$ec_cn			= $this->ec_cn;
+		$in_aet_re_tr	= $this->in_aet_re_tr;
+		$sd_dg			= $this->sd_dg;
+		$dr				= $this->dr;
 
-		$results = Student::with('Category', 'Call','Call.User')
-				->WhereIn('category_id', [ 8])
-				->Where('state', '=', 0)
-				->orderBy('id', 'ASC')
-				->paginate(10);
-		return view('ticket.call.index', compact('results', 'vola','cred','insc','dr'));
+		$results = $this->dr;
+
+		return view('ticket.call.index', compact('results', 'vm', 'ic_cr', 'ec_cn', 'in_aet_re_tr', 'sd_dg', 'dr'));
 	}
 	/**
 	 * Show the form for creating a new resource.
@@ -175,13 +209,16 @@ class CallStudentController extends Controller {
 	 */
 	public function edit($id)
 	{
-		$vola = $this->vola;
-		$cred = $this->cred;
-		$insc = $this->insc;
-		$dr = $this->dr;
+		$vm 			= $this->vm;
+		$ic_cr 			= $this->ic_cr;
+		$ec_cn			= $this->ec_cn;
+		$in_aet_re_tr	= $this->in_aet_re_tr;
+		$sd_dg			= $this->sd_dg;
+		$dr				= $this->dr;
 
 		$results_student = Student::findOrFail($id);
-		return view('ticket.call.edit', compact('results_student', 'vola','cred','insc','dr'));
+
+		return view('ticket.call.edit', compact('results_student', 'vm', 'ic_cr', 'ec_cn', 'in_aet_re_tr', 'sd_dg', 'dr'));
 	}
 
 	/**

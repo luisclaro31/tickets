@@ -41,7 +41,9 @@ Route::group(['prefix' => 'ticket', 'middleware' => ['auth']],
 		function() {
 			Route::get('frills', 'Ticket\CallStudentController@frills');
 			Route::get('credit', 'Ticket\CallStudentController@credit');
+			Route::get('certified', 'Ticket\CallStudentController@certified');
 			Route::get('registrations', 'Ticket\CallStudentController@registrations');
+			Route::get('others', 'Ticket\CallStudentController@others');
 			Route::get('dr', 'Ticket\CallStudentController@dr');
 		});
 

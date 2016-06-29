@@ -1,5 +1,6 @@
 <?php namespace Tickets\Http\Controllers\Ticket;
 
+use Tickets\Category;
 use Tickets\Http\Controllers\Controller;
 
 use Illuminate\Support\Facades\Redirect;
@@ -15,22 +16,30 @@ class StudentController extends Controller {
 
 	public function __construct()
 	{
-		$this->vola = Student::with('Category')
-				->WhereIn('category_id', [ 3, 4, 5])
+		$this->vm = Student::with('Category', 'Call', 'Call.User')
+				->WhereIn('category_id', [3, 4])
 				->Where('state', '=', 0)
-				->paginate();
-		$this->cred = Student::with('Category')
-				->WhereIn('category_id', [ 1, 2])
+				->paginate(10);
+		$this->ic_cr = Student::with('Category', 'Call', 'Call.User')
+				->WhereIn('category_id', [1, 2])
 				->Where('state', '=', 0)
-				->paginate();
-		$this->insc = Student::with('Category')
-				->WhereIn('category_id', [ 6, 7,9,10,11])
+				->paginate(10);
+		$this->ec_cn = Student::with('Category', 'Call', 'Call.User')
+				->WhereIn('category_id', [5, 6])
 				->Where('state', '=', 0)
-				->paginate();
-		$this->dr = Student::with('Category')
-				->WhereIn('category_id', [ 8])
+				->paginate(10);
+		$this->in_aet_re_tr = Student::with('Category', 'Call', 'Call.User')
+				->WhereIn('category_id', [7, 8, 9, 10])
 				->Where('state', '=', 0)
-				->paginate();
+				->paginate(10);
+		$this->sd_dg = Student::with('Category', 'Call', 'Call.User')
+				->WhereIn('category_id', [11, 12])
+				->Where('state', '=', 0)
+				->paginate(10);
+		$this->dr = Student::with('Category', 'Call', 'Call.User')
+				->WhereIn('category_id', [13])
+				->Where('state', '=', 0)
+				->paginate(10);
 	}
 
 	/**
@@ -40,16 +49,18 @@ class StudentController extends Controller {
 	 */
 	public function index()
 	{
-		$vola = $this->vola;
-		$cred = $this->cred;
-		$insc = $this->insc;
-		$dr = $this->dr;
+		$vm 			= $this->vm;
+		$ic_cr 			= $this->ic_cr;
+		$ec_cn			= $this->ec_cn;
+		$in_aet_re_tr	= $this->in_aet_re_tr;
+		$sd_dg			= $this->sd_dg;
+		$dr				= $this->dr;
 
 		$results = Student::with('Category')
 				->where('state', '=', 0)
 				->orderBy('id', 'DECS')
 				->paginate(10);
-		return view('ticket.student.index', compact('results', 'vola','cred','insc','dr'));
+		return view('ticket.student.index', compact('results', 'vm', 'ic_cr', 'ec_cn', 'in_aet_re_tr', 'sd_dg', 'dr'));
 	}
 
 	/**
@@ -59,16 +70,20 @@ class StudentController extends Controller {
 	 */
 	public function create()
 	{
-		$vola = $this->vola;
-		$cred = $this->cred;
-		$insc = $this->insc;
-		$dr = $this->dr;
+		$vm 			= $this->vm;
+		$ic_cr 			= $this->ic_cr;
+		$ec_cn			= $this->ec_cn;
+		$in_aet_re_tr	= $this->in_aet_re_tr;
+		$sd_dg			= $this->sd_dg;
+		$dr				= $this->dr;
+
+		$category = Category::orderBy('id', 'ASC')->lists('description', 'id');
 
 		$results = Student::with('Category')
 				->where('state', '=', 0)
 				->orderBy('id', 'DECS')
 				->paginate(2);
-		return view('ticket.student.create', compact('results', 'vola','cred','insc','dr'));
+		return view('ticket.student.create', compact('results', 'category', 'vm', 'ic_cr', 'ec_cn', 'in_aet_re_tr', 'sd_dg', 'dr'));
 	}
 
 	/**
@@ -103,11 +118,14 @@ class StudentController extends Controller {
 	 */
 	public function edit($id)
 	{
-		$vola = $this->vola;
-		$cred = $this->cred;
-		$insc = $this->insc;
-		$dr = $this->dr;
+		$vm 			= $this->vm;
+		$ic_cr 			= $this->ic_cr;
+		$ec_cn			= $this->ec_cn;
+		$in_aet_re_tr	= $this->in_aet_re_tr;
+		$sd_dg			= $this->sd_dg;
+		$dr				= $this->dr;
 
+		$category = Category::orderBy('id', 'ASC')->lists('description', 'id');
 		$results_student = Student::findOrFail($id);
 
 		if (Request::ajax()){
@@ -118,7 +136,7 @@ class StudentController extends Controller {
 			]);
 		}
 
-		return view('ticket.student.edit', compact('results_student', 'vola','cred','insc','dr'));
+		return view('ticket.student.edit', compact('results_student', 'category', 'vm', 'ic_cr', 'ec_cn', 'in_aet_re_tr', 'sd_dg', 'dr'));
 	}
 
 	/**

@@ -12,22 +12,30 @@ class UserController extends Controller {
 
 	public function __construct()
 	{
-		$this->vola = Student::with('Category')
-				->WhereIn('category_id', [ 3, 4, 5])
+		$this->vm = Student::with('Category', 'Call', 'Call.User')
+				->WhereIn('category_id', [3, 4])
 				->Where('state', '=', 0)
-				->paginate();
-		$this->cred = Student::with('Category')
-				->WhereIn('category_id', [ 1, 2])
+				->paginate(10);
+		$this->ic_cr = Student::with('Category', 'Call', 'Call.User')
+				->WhereIn('category_id', [1, 2])
 				->Where('state', '=', 0)
-				->paginate();
-		$this->insc = Student::with('Category')
-				->WhereIn('category_id', [ 6, 7,9,10,11])
+				->paginate(10);
+		$this->ec_cn = Student::with('Category', 'Call', 'Call.User')
+				->WhereIn('category_id', [5, 6])
 				->Where('state', '=', 0)
-				->paginate();
-		$this->dr = Student::with('Category')
-				->WhereIn('category_id', [ 8])
+				->paginate(10);
+		$this->in_aet_re_tr = Student::with('Category', 'Call', 'Call.User')
+				->WhereIn('category_id', [7, 8, 9, 10])
 				->Where('state', '=', 0)
-				->paginate();
+				->paginate(10);
+		$this->sd_dg = Student::with('Category', 'Call', 'Call.User')
+				->WhereIn('category_id', [11, 12])
+				->Where('state', '=', 0)
+				->paginate(10);
+		$this->dr = Student::with('Category', 'Call', 'Call.User')
+				->WhereIn('category_id', [13])
+				->Where('state', '=', 0)
+				->paginate(10);
 	}
 
 	/**
@@ -79,14 +87,16 @@ class UserController extends Controller {
 	 */
 	public function edit($id)
 	{
-		$vola = $this->vola;
-		$cred = $this->cred;
-		$insc = $this->insc;
-		$dr = $this->dr;
+		$vm 			= $this->vm;
+		$ic_cr 			= $this->ic_cr;
+		$ec_cn			= $this->ec_cn;
+		$in_aet_re_tr	= $this->in_aet_re_tr;
+		$sd_dg			= $this->sd_dg;
+		$dr				= $this->dr;
 
 
 		$result = User::findOrFail($id);
-		return view('ticket.user.edit', compact('result', 'vola','cred','insc','dr'));
+		return view('ticket.user.edit', compact('result', 'vm', 'ic_cr', 'ec_cn', 'in_aet_re_tr', 'sd_dg', 'dr'));
 
 	}
 
