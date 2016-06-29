@@ -1,5 +1,6 @@
 <?php namespace Tickets\Http\Controllers\Ticket;
 
+use Tickets\Category;
 use Tickets\Http\Controllers\Controller;
 
 use Illuminate\Support\Facades\Redirect;
@@ -216,9 +217,11 @@ class CallStudentController extends Controller {
 		$sd_dg			= $this->sd_dg;
 		$dr				= $this->dr;
 
+		$category = Category::orderBy('id', 'ASC')->lists('description', 'id');
+
 		$results_student = Student::findOrFail($id);
 
-		return view('ticket.call.edit', compact('results_student', 'vm', 'ic_cr', 'ec_cn', 'in_aet_re_tr', 'sd_dg', 'dr'));
+		return view('ticket.call.edit', compact('results_student', 'category', 'vm', 'ic_cr', 'ec_cn', 'in_aet_re_tr', 'sd_dg', 'dr'));
 	}
 
 	/**
