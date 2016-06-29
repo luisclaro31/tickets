@@ -19,26 +19,32 @@ class CallStudentController extends Controller {
 		$this->vm = Student::with('Category', 'Call', 'Call.User')
 				->WhereIn('category_id', [3, 4])
 				->Where('state', '=', 0)
+				->orderBy('id', 'ASC')
 				->paginate(10);
 		$this->ic_cr = Student::with('Category', 'Call', 'Call.User')
 				->WhereIn('category_id', [1, 2])
 				->Where('state', '=', 0)
+				->orderBy('id', 'ASC')
 				->paginate(10);
 		$this->ec_cn = Student::with('Category', 'Call', 'Call.User')
 				->WhereIn('category_id', [5, 6])
 				->Where('state', '=', 0)
+				->orderBy('id', 'ASC')
 				->paginate(10);
 		$this->in_aet_re_tr = Student::with('Category', 'Call', 'Call.User')
 				->WhereIn('category_id', [7, 8, 9, 10])
 				->Where('state', '=', 0)
+				->orderBy('id', 'ASC')
 				->paginate(10);
 		$this->sd_dg = Student::with('Category', 'Call', 'Call.User')
 				->WhereIn('category_id', [11, 12])
 				->Where('state', '=', 0)
+				->orderBy('id', 'ASC')
 				->paginate(10);
 		$this->dr = Student::with('Category', 'Call', 'Call.User')
 				->WhereIn('category_id', [13])
 				->Where('state', '=', 0)
+				->orderBy('id', 'ASC')
 				->paginate(10);
 	}
 
