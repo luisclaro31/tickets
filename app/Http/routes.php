@@ -22,6 +22,11 @@ Route::controllers([
 		'password' => 'Auth\PasswordController',
 ]);
 
+Route::group(['prefix' => 'users', 'middleware' => ['auth'], 'namespace' => 'Ticket' ],
+		function() {
+			Route::resource('my_profile','UserController');
+		});
+
 Route::group(['prefix' => 'ticket', 'middleware' => ['auth'], 'namespace' => 'Ticket' ],
 		function() {
 			Route::resource('student','StudentController');

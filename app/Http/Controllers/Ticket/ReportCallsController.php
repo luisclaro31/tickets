@@ -67,6 +67,8 @@ class ReportCallsController extends Controller {
 				->get();
 		$id = 0;
 
+		//$repor = Call::with('user')->date($request->get('date'))->
+
 		$results = Call::with('user')
 				->date($request->get('date'))
 				->select(['user_id','student_id', DB::raw('COUNT(student_id) as total_calls')])

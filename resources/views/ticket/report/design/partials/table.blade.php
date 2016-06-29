@@ -2,7 +2,7 @@
     <div class="col-xs-3 pull-right">
         {!! Form::model($query, ['route' => 'ticket.report.index', 'method' => 'GET', 'role' => 'search']) !!}
         <div class="input-group input-group-sm">
-            {!! Form::text('date', null, ['class' => 'form-control', 'placeholder' => 'yyyy-mm-dd']) !!}
+            {!! Form::date('date', null, ['class' => 'form-control', 'placeholder' => 'yyyy-mm-dd']) !!}
             <span class="input-group-btn">
                 <button type="submit" class="btn btn-success btn-flat">Filtrar</button>
             </span>
