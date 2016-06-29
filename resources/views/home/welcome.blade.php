@@ -23,13 +23,10 @@
 				<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
 					<div class="carousel-inner" role="listbox">
 						<div class="item active">
-							<img src="{{asset('img/1.png')}}" alt="First slide">
+							<img src="{{asset('img/2.png')}}" alt="First slide">
 						</div>
 						<div class="item">
-							<img src="{{asset('img/2.png')}}" alt="Second slide">
-						</div>
-						<div class="item">
-							<img src="{{asset('img/3.png')}}" alt="Third slide">
+							<img src="{{asset('img/10.png')}}" alt="Third slide">
 						</div>
 						<div class="item">
 							<img src="{{asset('img/4.png')}}" alt="Third slide">
