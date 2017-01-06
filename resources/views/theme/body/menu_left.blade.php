@@ -36,6 +36,7 @@
                 <li><a href="{{ url('/ticket/registrations') }}"><i class="fa fa-circle-o"></i> Inscripciones T-R-E<span class="label label-primary pull-right">{{ $in_aet_re_tr->total() }}</span></a></li>
                 <li><a href="{{ url('/ticket/others') }}"><i class="fa fa-circle-o"></i> Semina. - Der. Grado<span class="label label-primary pull-right">{{ $sd_dg->total() }}</span></a></li>
                 <li><a href="{{ url('/ticket/dr') }}"><i class="fa fa-circle-o"></i> Dir. Admisiones<span class="label label-primary pull-right">{{ $dr->total() }}</span></a></li>
+                <li><a href="{{ url('/ticket/called') }}"><i class="fa fa-circle-o"></i> No Atendidos<span class="label label-primary pull-right"></span></a></li>
             </ul>
             </li>
             </li>

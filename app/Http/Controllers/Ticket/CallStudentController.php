@@ -54,6 +54,23 @@ class CallStudentController extends Controller {
 	 * @return Response
 	 */
 
+	public function called()
+    {
+        $vm 			= $this->vm;
+        $ic_cr 			= $this->ic_cr;
+        $ec_cn			= $this->ec_cn;
+        $in_aet_re_tr	= $this->in_aet_re_tr;
+        $sd_dg			= $this->sd_dg;
+        $dr				= $this->dr;
+
+        $results = Student::with('Category', 'Call','Call.User')
+            ->Where('state', '=', 2)
+            ->orderBy('id', 'DESC')
+            ->paginate(10);
+
+        return view('ticket.call.index', compact('results', 'vm', 'ic_cr', 'ec_cn', 'in_aet_re_tr', 'sd_dg', 'dr'));
+    }
+
 	public function index()
 	{
 		$vm 			= $this->vm;
