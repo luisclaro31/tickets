@@ -23,16 +23,40 @@
 				<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
 					<div class="carousel-inner" role="listbox">
 						<div class="item active">
-							<img src="{{asset('img/5.png')}}" alt="Imagen">
+							<img src="{{asset('img/0.jpeg')}}" alt="Imagen">
 						</div>
 						<div class="item">
-							<img src="{{asset('img/6.png')}}" alt="Imagen">
+							<img src="{{asset('img/11.jpeg')}}" alt="Imagen">
 						</div>
 						<div class="item">
-							<img src="{{asset('img/7.png')}}" alt="Imagen">
+							<img src="{{asset('img/1.jpeg')}}" alt="Imagen">
 						</div>
 						<div class="item">
-							<img src="{{asset('img/8.png')}}" alt="Imagen">
+							<img src="{{asset('img/2.jpeg')}}" alt="Imagen">
+						</div>
+						<div class="item">
+							<img src="{{asset('img/3.jpeg')}}" alt="Imagen">
+						</div>
+						<div class="item">
+							<img src="{{asset('img/4.jpeg')}}" alt="Imagen">
+						</div>
+						<div class="item">
+							<img src="{{asset('img/5.jpeg')}}" alt="Imagen">
+						</div>
+						<div class="item">
+							<img src="{{asset('img/6.jpeg')}}" alt="Imagen">
+						</div>
+						<div class="item">
+							<img src="{{asset('img/7.jpeg')}}" alt="Imagen">
+						</div>
+						<div class="item">
+							<img src="{{asset('img/8.jpeg')}}" alt="Imagen">
+						</div>
+						<div class="item">
+							<img src="{{asset('img/9.jpeg')}}" alt="Imagen">
+						</div>
+						<div class="item">
+							<img src="{{asset('img/10.jpeg')}}" alt="Imagen">
 						</div>
 					</div>
 					<a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
